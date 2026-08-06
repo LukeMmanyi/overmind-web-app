@@ -1,5 +1,5 @@
 body {
-  
+  background-color: #0c0c0c;
 }
 
 nav {
@@ -57,7 +57,7 @@ nav {
 .start-button-1 {
   border: none;
   position: absolute;
-  right: 10px;
+  right: 25px;
   padding: 10px;
   border-radius: 3px;
   background:linear-gradient(135deg, #4338ca, #2563eb) ;
@@ -69,17 +69,18 @@ nav {
   letter-spacing: 1px;
    text-transform: uppercase;
    cursor: pointer;
+
 }
 
 .version {
   margin-top: 75px;
-  border-style: dashed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   color: #525252;
   font-weight: 400;
+  margin-right: 25px;
 }
 
 .version-p, .version-p2 {
@@ -173,8 +174,6 @@ text-transform: uppercase;
 
 .details {
   background-color: #0c0c0c;
-  border-color: #525252;
-  border-style: dashed;
   margin-top: 200px;
   padding: 150px;
   color: white;
@@ -252,8 +251,7 @@ align-items: center;
 }
 
 .how-it-works {
-  
-  border-style: dashed;
+  background-color: #F5F5F3;
    margin-top: 100px;
    padding: 150px;
    display: flex;
@@ -367,6 +365,7 @@ align-items: center;
   font-size:10px;
   color: #525252;
   text-transform: uppercase;
+  margin-top: 100px;
 }
 
 .pricing-head-p {
@@ -503,8 +502,103 @@ margin-left: 25px;
     margin-top: auto;
 }
 
+.cta {
+  display: flex;
+  flex-direction: column;
+  padding: 150px;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-text {
+  display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+.cta-h {
+  display:flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.small-line {
+  width: 20px;
+  height: 1px;
+  background-color:#2563EB ;
+}
+
+.cta-h p {
+  font-family: Dm Mono;
+  color: #2563EB;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.cta-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-message h1 {
+  font-family: Barlow Condensed;
+  font-weight: 900;
+  font-size: 90px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.cta-message h2 {
+  font-family: fraunces;
+  font-style: italic;
+  font-size: 76px;
+  color: #737373;
+  font-weight: 300;
+}
+
+.cta-button, .footer-button {
+  font-family: Barlow Condensed;
+  font-weight: 800;
+  font-size: 15px;
+  color: #ffffff;
+  padding: 14px 36px;
+  border-radius: 2px;
+  background-image: linear-gradient(135deg, #4338ca, #2563eb);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;   /* Keeps everything on the bottom */
+  padding: 80px 60px;
+  background: #0c0c0c;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand {
+  font-family: Barlow Condensed;
+  color: white;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.footer-copy {
+  color: #737373;
+  font-family: Inter;
+  margin-top: 10px;
+}
 
 
 
