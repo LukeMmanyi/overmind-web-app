@@ -124,5 +124,6 @@ nav p {
   width: 100%;
   cursor: pointer;
   border-width: 0.1px;
+  text-decoration: none;
 }
 
