@@ -16,6 +16,12 @@ nav {
   height:60px;
 }
 
+a {
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
 .title {
    position: absolute;
    left:20px;
@@ -69,7 +75,7 @@ nav {
   letter-spacing: 1px;
    text-transform: uppercase;
    cursor: pointer;
-
+  display: flex;
 }
 
 .version {
@@ -170,6 +176,9 @@ font-family: Barlow Condensed;
 font-size: 20px;
 font-weight: 700;
 text-transform: uppercase;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .details {
