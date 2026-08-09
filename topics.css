@@ -17,6 +17,12 @@ nav {
   height:60px;
 }
 
+.overmind {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .over {
   font-family: Barlow Condensed;
   color:#ffffff;
@@ -56,8 +62,6 @@ nav p {
   align-items: center;
   height: 100vh;
   width: 100%;
-  border-style: dashed;
-  border-color: #0c0c0c;
   flex-direction: column;
 }
 

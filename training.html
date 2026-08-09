@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Overmind Topics</title>
-  <link rel="stylesheet" href="training.html">
+  <link rel="stylesheet" href="training.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,24 +35,26 @@
 <body>
     <nav>
       <a href="index.html" class="back-a">← BACK</a>
-      <p> <span class="over">OVER</span><span class="mind">Mind</span></p>
+      <p class="overmind"> <span class="over">OVER</span><span class="mind">Mind</span></p>
 
       <p>TOPIC</p>
     </nav>
 
     <div class="topic-div">
+
+      <div class="topic-section">
       <div class="topic-info">
         <div class="topic-step">
           <div class="line"></div> 
           <p class="topic-p1">STEP 02</p>
-          <p class="dash">-</p>
+          <p class="dash"></p>
           <p class="topic-name">TOPIC</p>
         </div>
 
-        <h1>YOUR Challenge.</h1>
+        <h1>YOUR CHALLENGE.</h1>
 
-        <div class="topic box">
-          <p class="topic info">
+        <div class="topic-box">
+          <p class="topic-info">
 
           </p>
         </div>
@@ -62,16 +64,63 @@
       <div class="response">
         <p>YOUR RESPONSE</p>
 
-        <textarea placeholder="Write out your thinking. Don't hold back - the AI reads your reasoning, not just your answer"  name="user-response" id="response">
-
-        </textarea>
+        <textarea placeholder="Write out your thinking. Don't hold back - the AI reads your reasoning, not just your answer"  name="user-response" id="response"></textarea>
       </div>
 
       <div class="buttons">
         <button class="submit">SUBMIT ANSWER →</button>
-        <a href="topics.html">← BACK</a>
+        <a class="back" href="topics.html">← BACK</a>
       </div>
-      
+
+      <div class="ai-response">
+        <div class="ai-head">
+          <div class="line"></div>
+          <p>AI ANALYSIS</p>
+        </div>
+
+        <div class="score">
+          <p>FEEDBACK.</p>
+
+          <p class="ai-score"></p>
+          <p class="/100">/100</p>
+        </div>
+
+        <div class="ai-analysis">
+          <p class="ai-p">OVERMIND ANALYSIS</p>
+          <div class="what-worked">
+            <p class="what-worked-p">WHAT WORKED</p>
+
+            <p class="ai-response-1">
+
+            </p>
+          </div>
+
+          <div class="ai-line"></div>
+
+          <div class="need-work">
+            <p class="need-work-p">WHAT NEEDS WORK</p>
+
+            <p class="ai-response-2">
+
+            </p>
+          </div>
+
+
+          <div class="ai-line"></div>
+
+          <div class="stronger-move">
+            <p class="stronger-move-p">STRONGER MOVE</p>
+
+            <p class="ai-response-3">
+
+            </p>
+          </div>
+        </div>
+
+        <a class="try-another" href="topics.html">TRY ANOTHER CHALLENGE →</a>
+
+      </div>
+      </div>
     </div>
 </body>
 </html>
