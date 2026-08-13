@@ -61,7 +61,16 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 150px;
+  border-style: dotted;
+  border-color: #4338ca;
 }
+
+.topic-section{
+  border-style: dotted;
+  border-color: #2563eb;
+  max-width: fit-content;
+}
+
 
 
 .topic-step {
@@ -76,7 +85,7 @@ width: 10px;
   background-color:#2563eb ;
 }
 
-.topic-info h1 {
+.topic-details h1 {
   font-weight: 900;
   font-family: Barlow Condensed;
   font-size: 40px;
@@ -124,7 +133,7 @@ width: 10px;
 .topic-info {
   font-family: inter;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   color: #a3a3a3;
 }
 
@@ -151,7 +160,8 @@ textarea {
   border-color: #525252;
  font-family: inter;
   font-size: 15px;
-  color: #a3a3a3; 
+  color: #a3a3a3;
+  max-width: 100%; 
 }
 
 textarea:focus {
@@ -237,11 +247,25 @@ textarea::placeholder {
   gap: 20px;
 }
 
-.score p {
+.feedback {
   font-weight: 900;
   font-size: 28px;
   color: #ffffff;
   font-family: Barlow Condensed;
+}
+
+.ai-score {
+  font-weight: 900;
+  font-size: 42px;
+  color: #ffffff;
+  font-family: Barlow Condensed;
+}
+
+.hunnid {
+  font-family: DM Mono;
+  font-weight: 400;
+  font-size: 12px;
+  color: #525252;
 }
 
 .ai-analysis {
@@ -285,18 +309,20 @@ textarea::placeholder {
 }
 
 
-.what-worked p, .need-work p, .stronger-move p {
+.what-worked-p, .need-work-p, .stronger-move-p{
   font-family: Dm Mono;
   font-weight: 400;
   color: #525252;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .ai-response-1, .ai-response-2, .ai-response-3 {
   font-family: inter;
   font-weight: 400;
-  color: #a3a3a3;
-  font-size: 14px;
+  color: #d1d1d1;
+  font-size: 15px;
+  max-width: 80ch;
+
 }
 
 .try-another {
