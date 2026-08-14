@@ -71,7 +71,7 @@ body {
 }
 
 .topic-section{
-  max-width: fit-content;
+  width: min(800px, 90vw);
 }
 
 
@@ -110,35 +110,30 @@ width: 10px;
 }
 
 .topic-box {
-  background-color:#272727;
-  width: min(800px, 90vw);
-  height: 200px;
+    background-color: #272727;
+  width: 100%;
+  min-height: 200px;
+  height: auto;
   border-radius: 5px;
-  border-left-color: #2563eb;
-  border-width: 3px;
-  border-left-style: solid;
+  border-left: 3px solid #2563eb;
+  border-top: 1px solid #525252;
+  border-right: 1px solid #525252;
+  border-bottom: 1px solid #525252;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 28px 32px;
- border-top-style: solid;
- border-right-style: solid;
- border-bottom-style: solid;
- border-bottom-color: #525252;
-  border-top-color: #525252;
-   border-right-color: #525252;
-   border-bottom-width: 0.1px;
-    border-top-width: 0.1px;
-     border-right-width: 0.1px;
 }
 
 
 .topic-info {
-  font-family: inter;
+font-family: Inter;
   font-weight: 400;
   font-size: 16px;
+  line-height: 1.6;
   color: #a3a3a3;
-
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .response {
@@ -274,7 +269,8 @@ textarea::placeholder {
 }
 
 .ai-analysis {
- 
+    width: 100%;
+  height: auto;
   margin-top: 20px;
   border-left-style: solid;
   border-color: #2563eb;
@@ -301,8 +297,9 @@ textarea::placeholder {
 }
 
 .what-worked, .need-work, .stronger-move {
-  width: 95%;
-  height: 150px;
+   width: 100%;
+  height: auto;
+  min-height: 120px;
 }
 
 .ai-line {
@@ -326,7 +323,11 @@ textarea::placeholder {
   font-weight: 400;
   color: #d1d1d1;
   font-size: 15px;
+  width: 100%;
+  height: auto;
   max-width: 80ch;
+  overflow-wrap: break-word;
+  line-height: 1.6;
 
 }
 
