@@ -345,3 +345,7 @@ textarea::placeholder {
 
 }
 
+.error {
+  display: none;
+}
+

@@ -44,7 +44,7 @@ socialButton.addEventListener('click', () => {
     button.classList.remove("selected");
   });
   socialButton.classList.add('selected');
-  selectedTopic = 'social inteligence';
+  selectedTopic = 'social intelligence';
   checkReady();
 })
 

@@ -3,12 +3,19 @@ import express from 'express'
 import cors from 'cors'
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
 app.use(cors())
 
 app.post('/getAIR', async (req, res) => {
+  if (
+  !req.body.message ||
+  typeof req.body.message !== 'string' ||
+  !req.body.message.trim()
+) {
+  return res.status(400).json({ error: 'Invalid message' });
+}
    try {
   const aiData = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -25,6 +32,10 @@ app.post('/getAIR', async (req, res) => {
     }),
   });
 
+  if (!aiData.ok) {
+  throw new Error(`Anthropic error: ${aiData.status}`);
+}
+
   const aiSituation = await aiData.json();
  
   res.json(aiSituation);
@@ -34,6 +45,15 @@ app.post('/getAIR', async (req, res) => {
 })
 
 app.post('/sendUR', async (req, res) => {
+  if (
+  !req.body.message ||
+  typeof req.body.message !== 'string' ||
+  !req.body.message.trim()
+) {
+  return res.status(400).json({ error: 'Invalid message' });
+}
+
+
   try{
   const aiData = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -48,6 +68,9 @@ app.post('/sendUR', async (req, res) => {
       messages: [{role: 'user', content: req.body.message}],
     })
   })
+  if (!aiData.ok) {
+  throw new Error(`Anthropic error: ${aiData.status}`);
+}
 
   const aiResponse = await aiData.json();
 

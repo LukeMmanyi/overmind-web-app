@@ -10,7 +10,7 @@ const whatWorked = document.querySelector('.ai-response-1');
 const needWork = document.querySelector('.ai-response-2');
 const strongerMove = document.querySelector('.ai-response-3');
 const aiResponse = document.querySelector('.ai-response');
-
+const errorMsg = document.querySelector('.error');
 
 
 let aiSituation;
@@ -59,6 +59,7 @@ so do not make it super advanced but not too easy.`;
     message: message
   }
   
+  try{
   const sendAIData = await fetch("http://localhost:3000/getAIR", {
     method: 'POST',
     headers: {
@@ -68,14 +69,20 @@ so do not make it super advanced but not too easy.`;
     body: JSON.stringify(messageObj)
   }) 
 
-  i
+  if (!sendAIData.ok) {
+    throw new Error('Server responded with an error');
+  }
   
    const aiSituationData = await sendAIData.json();
 
    aiSituation = aiSituationData.content[0].text;
 
   topicInfo.textContent = aiSituation;
- 
+}catch(error) {
+    console.log(error);
+    errorMsg.textContent = "Couldn't load a challenge right now. Try refreshing the page.";
+    errorMsg.style.display = 'block';
+}
 }
 
 async function sendResponse(userResponse) {
@@ -86,7 +93,7 @@ async function sendResponse(userResponse) {
     message: message
   }
 
-
+try{
   const userData = await fetch('http://localhost:3000/sendUR', {
     method: 'POST',
     headers: {
@@ -95,12 +102,18 @@ async function sendResponse(userResponse) {
     body: JSON.stringify(userResponseObj)
 
   })
+     if (!userData.ok) throw new Error('Server responded with an error');
 
   const aiResponseData = await userData.json()
 
-  console.log(aiResponseData.content[0].text)
+ 
+    const cleanText = aiResponseData.content[0].text
+      .replace(/```json/g, '')
+      .replace(/```/g, '')
+      .trim();
 
-  const aiObj = JSON.parse(aiResponseData.content[0].text);
+    const aiObj = JSON.parse(cleanText);
+
 
   score.textContent = aiObj.score;
 
@@ -114,7 +127,14 @@ async function sendResponse(userResponse) {
    aiResponse.scrollIntoView({
     behavior: "smooth"
    })
-    
+  }catch(error) {
+     console.log(error);
+    submitButton.textContent = 'SUBMIT ANSWER →';
+      submitButton.disabled = true;
+      submitButton.textContent = 'SUBMIT ANSWER →';
+    errorMsg.textContent = "Something went wrong scoring your response. Try submitting again.";
+    errorMsg.style.display = 'block';
+  }
 }
 
 
@@ -123,6 +143,6 @@ getChallenge();
 submitButton.addEventListener('click', () => {
   sendResponse(userResponse.value)
   submitButton.textContent = 'ANALYZING...';
- 
+   submitButton.disabled = true;
 })
 
