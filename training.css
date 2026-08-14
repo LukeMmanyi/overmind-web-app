@@ -133,6 +133,7 @@ font-family: Inter;
   line-height: 1.6;
   color: #a3a3a3;
   width: 100%;
+  text-align: center;
   overflow-wrap: break-word;
 }
 
