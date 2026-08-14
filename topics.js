@@ -17,7 +17,7 @@ realisticButton.addEventListener('click', () => {
     button.classList.remove("selected");
   });
   realisticButton.classList.add('selected');
-  selectedStyle = 'Realistic'
+  selectedStyle = 'realistic'
   checkReady();
 })
 
@@ -61,6 +61,8 @@ strategyButton.addEventListener('click', () => {
 function checkReady() {
   if (selectedStyle && selectedTopic) {
     continueButton.style.display = 'block';
+  } else {
+    continueButton.style.display = 'none';
   }
 }
 

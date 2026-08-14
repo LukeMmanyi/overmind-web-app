@@ -2,6 +2,9 @@ body {
   background-color: #0c0c0c;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 nav {
   display: flex;

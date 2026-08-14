@@ -12,6 +12,10 @@ nav {
   height:60px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #0c0c0c;
 }
@@ -54,6 +58,8 @@ body {
   margin-left: 50px;
   text-decoration: none;
   cursor: pointer;
+  padding: 10px;
+
 }
 
 .topic-div {
@@ -105,8 +111,8 @@ width: 10px;
 
 .topic-box {
   background-color:#272727;
-  width: 700px;
-  height: 125px;
+  width: min(800px, 90vw);
+  height: 200px;
   border-radius: 5px;
   border-left-color: #2563eb;
   border-width: 3px;
@@ -151,6 +157,7 @@ width: 10px;
 
 textarea {
   height: 200px;
+  width: 100%;
   background-color:#272727;
   padding: 20px 24px;
   border-radius: 5px;
