@@ -8,7 +8,7 @@ body {
 
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   background-color:#0c0c0c ;
@@ -81,6 +81,7 @@ a {
    cursor: pointer;
   display: flex;
 }
+
 
 .version {
   margin-top: 75px;
@@ -620,7 +621,20 @@ flex-direction: column;
 }
 
 
+@media (max-width: 768px) {
+   .links {
+    display: none;
+  }
 
+    .start-button-1 {
+    position: absolute;
+    right: 15px;
+    width: auto;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+}
 
 
 
