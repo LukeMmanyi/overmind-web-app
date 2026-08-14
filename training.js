@@ -38,7 +38,7 @@ You are a mentor for Overmind, an app that trains cognitive skills through high-
   }
   
   try{
-  const sendAIData = await fetch("http://localhost:3000/getAIR", {
+  const sendAIData = await fetch("https://overmind-web-app.onrender.com/getAIR", {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
@@ -72,7 +72,7 @@ async function sendResponse(userResponse) {
   }
 
 try{
-  const userData = await fetch('http://localhost:3000/sendUR', {
+  const userData = await fetch('https://overmind-web-app.onrender.com/sendUR', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
