@@ -4,6 +4,7 @@ const userResponse = document.querySelector(".user-response")
 const urlParams = new URLSearchParams( window.location.search);
 const topicInfo = document.querySelector('.topic-info');
 const topic = urlParams.get('topic');
+const style = urlParams.get('style');
 const score = document.querySelector('.ai-score');
 const whatWorked = document.querySelector('.ai-response-1');
 const needWork = document.querySelector('.ai-response-2');
@@ -27,7 +28,32 @@ userResponse.addEventListener("input", () => {
 
 async function getChallenge() {
 
-  const message = `I have an application called overmind. It tests users cognitive abilities and helps them foster their decision making. You are the mentor that will give them a situation according to a topic and tell them how they did with scrutiny. Now please give them a situation that cab be applicable in the real world and actually have them interested and wanting to do more challenges. It has to mae them learn, be fun, and addictive. The topic is ${topic}. Make the response around 270 characters. can go less or more if you want. Remember only the challenge not the scoring yet. Try to be unique with the situations so we don't get the same one twice. No emojis or anything just give me the situation text straight up`;
+  const styleInstruction = style === 'fantasy'
+    ? "Frame this scenario in a dramatized, heightened setting — think anime, fantasy, or sci-fi inspired stakes and tension — but the core problem must still require real, grounded reasoning to solve. Don't let the dramatization replace the substance of the decision."
+    : "Keep this scenario grounded in realistic, everyday circumstances — something that could plausibly happen in real life.";
+
+  const message = `You are a mentor for Overmind, an app that trains cognitive skills through 
+high-stakes scenarios. Generate ONE scenario for the topic: ${topic}. 
+
+Style instructions: ${styleInstruction}
+
+Draw from a wide range of domains, including business and career, 
+but rotate across other areas too — family and relationships, friendships, 
+money and personal finance, health decisions, community or group dynamics, 
+ethical dilemmas in everyday life, conflict with strangers or neighbors, 
+parenting or caregiving, romantic relationships, or civic/social situations. 
+Don't default to business or career every time — vary the domain so repeated 
+use doesn't feel repetitive.
+
+The scenario must be specific and put the user in a position where they have 
+to make a real decision or navigate a real interpersonal or strategic 
+situation — the stakes and reasoning required must be genuine, not trivial, 
+regardless of style. Make it engaging enough that the user wants to keep 
+training.
+
+Response should be about 270 characters, plain text only, no emojis, 
+no formatting, no preamble — just the scenario itself. My age range is 18-25 
+so do not make it super advanced but not too easy.`;
 
   const messageObj = {
     message: message
@@ -41,6 +67,8 @@ async function getChallenge() {
 
     body: JSON.stringify(messageObj)
   }) 
+
+  i
   
    const aiSituationData = await sendAIData.json();
 
@@ -80,8 +108,15 @@ async function sendResponse(userResponse) {
   needWork.textContent = aiObj.needWork;
   strongerMove.textContent = aiObj.betterMove;
 
-   aiResponse.style.display = 'block'
+   aiResponse.style.display = 'block';
+   submitButton.style.display = 'none';
+
+   aiResponse.scrollIntoView({
+    behavior: "smooth"
+   })
+    
 }
+
 
 getChallenge();
 

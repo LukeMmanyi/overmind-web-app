@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 app.post('/getAIR', async (req, res) => {
-   
+   try {
   const aiData = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -28,10 +28,13 @@ app.post('/getAIR', async (req, res) => {
   const aiSituation = await aiData.json();
  
   res.json(aiSituation);
-
+   }catch(error) {
+    res.status(500).json({ error: "Something went wrong" })
+   }
 })
 
 app.post('/sendUR', async (req, res) => {
+  try{
   const aiData = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -49,6 +52,9 @@ app.post('/sendUR', async (req, res) => {
   const aiResponse = await aiData.json();
 
   res.json(aiResponse);
+}catch(error) {
+  res.status(500).json({ error: "Something went wrong" })
+}
 })
 
 app.listen(PORT, () => {

@@ -43,6 +43,7 @@ body {
   color: #525252;
   font-size: 11px;
   margin-right: 50px;
+   text-transform: uppercase;
 }
 
 .back-a {
@@ -61,13 +62,9 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 150px;
-  border-style: dotted;
-  border-color: #4338ca;
 }
 
 .topic-section{
-  border-style: dotted;
-  border-color: #2563eb;
   max-width: fit-content;
 }
 
@@ -135,6 +132,7 @@ width: 10px;
   font-weight: 400;
   font-size: 16px;
   color: #a3a3a3;
+
 }
 
 .response {
@@ -312,8 +310,8 @@ textarea::placeholder {
 .what-worked-p, .need-work-p, .stronger-move-p{
   font-family: Dm Mono;
   font-weight: 400;
-  color: #525252;
-  font-size: 10px;
+  color: #686868;
+  font-size: 13px;
 }
 
 .ai-response-1, .ai-response-2, .ai-response-3 {
@@ -346,3 +344,4 @@ textarea::placeholder {
   text-decoration: none;
 
 }
+
